@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:32:39 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/15 12:32:43 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:17:56 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,29 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 
-void	*ft_memset(void *b, int c size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *to, const void *from, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t size);
 
-size_t		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-int	ft_toupper(int c);
-int	ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 char	*ft_strchr(const char *string, int c);
 char	*ft_strrchr(const char *s, int c);
-int	ft_strncmp(const char *s1, const char *s2, size_t size);
-void	*ft_memchr(const void *block, int c, size_t size);
-int	ft_memcmp(const void *a1, const void *a2, size_t size);
+int		ft_strncmp(const char *s1, const char *s2, size_t size);
+void	*ft_memchr(const void *s, int c, size_t size);
+int		ft_memcmp(const void *a1, const void *a2, size_t size);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-int	ft_atoi(const char *string);
+int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_strcpy(char *dst, const char *src);

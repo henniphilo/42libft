@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:50:53 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/15 16:45:04 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:40:55 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ char	*ft_itoa(int n)
 		num *= -1;
 		digits++;
 	}
-	str_number = (char *)malloc(sizeof(char) * (digits + 1))
+	str_number = (char *)malloc(sizeof(char) * (digits + 1));
 		if (!str_number)
 		return (NULL);
 	*(str_number + digits) = 0;
-	while (digit--)
+	while (digits--)
 	{
 		*(str_number + digits) = num % 10 + '0';
 		num = num / 10;

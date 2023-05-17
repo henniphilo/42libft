@@ -10,7 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all fclean clean re
 
 NAME = libft.a
 
@@ -22,45 +21,49 @@ RM = rm
 
 FLAG = -Werror -Wextra -Wall
 
-SRC = here_priv_libft/ft_atoi.c
-here_priv_libft/ft_bzero.c
-here_priv_libft/ft_calloc.c
-here_priv_libft/ft_isalnum.c
-here_priv_libft/ft_isalpha.c
-here_priv_libft/ft_isascii.c
-here_priv_libft/ft_isdigit.c
-here_priv_libft/ft_isprint.c
-here_priv_libft/ft_itoa.c
-here_priv_libft/ft_memchr.c
-here_priv_libft/ft_memcmp.c
-here_priv_libft/ft_memcpy.c
-here_priv_libft/ft_memmove.c
-here_priv_libft/ft_memset.c
-here_priv_libft/ft_split.c
-here_priv_libft/ft_strchr.c
-here_priv_libft/ft_strdup.c
-here_priv_libft/ft_strjoin.c
-here_priv_libft/ft_strlcat.c
-here_priv_libft/ft_strlcpy.c
-here_priv_libft/ft_strlen.c
-here_priv_libft/ft_strncmp.c
-here_priv_libft/ft_strnstr.c
-here_priv_libft/ft_strrchr.c
-here_priv_libft/ft_strtrim.c
-here_priv_libft/ft_substr.c
-here_priv_libft/ft_tolower.c
-here_priv_libft/ft_toupper.c
+SRC = ft_atoi.c \
+ft_bzero.c \
+ft_calloc.c \
+ft_isalnum.c \
+ft_isalpha.c \
+ft_isascii.c \
+ft_isdigit.c \
+ft_isprint.c \
+ft_itoa.c \
+ft_memchr.c \
+ft_memcmp.c \
+ft_memcpy.c \
+ft_memmove.c \
+ft_memset.c \
+ft_split.c \
+ft_strchr.c \
+ft_strdup.c \
+ft_strjoin.c \
+ft_strlcat.c \
+ft_strlcpy.c \
+ft_strlen.c \
+ft_strncmp.c \
+ft_strnstr.c \
+ft_strrchr.c \
+ft_strtrim.c \
+ft_substr.c \
+ft_tolower.c \
+ft_toupper.c \
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
+
+HEADER := libft.h
 
 $(NAME):$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 %.o: %.c
 	$(CC) $(FLAG) -c $< -o $@
 fclean:clean
-	/$(RM) -f $(NAME)
+	$(RM) -f $(NAME)
 clean:
 	$(RM) $(OBJ)	
 re: fclean all
+
+.PHONY: all fclean clean re

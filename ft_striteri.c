@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 15:30:43 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/16 16:39:37 by hwiemann         ###   ########.fr       */
+/*   Created: 2023/05/16 12:01:03 by hwiemann          #+#    #+#             */
+/*   Updated: 2023/05/16 12:28:24 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Applies the function ’f’ on each character of
+the string passed as argument, passing its index
+as first argument. Each character is passed by
+address to ’f’ to be modified if necessary.*/
+
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		return (1);
+		f(i, &(s[i]));
+		i++;
 	}
-	return (0);
 }
+
+/* f(i, &(s[i])); uebergibt die adresse des aktuellen Zeichens*/
