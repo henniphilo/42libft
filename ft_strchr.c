@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:22:26 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/11 16:33:28 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:18:56 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while ((*s != '\0') && (*s != c))
+	while (*s != '\0')
 	{
+		if (*s == c)
+		{
+			return ((char *)s);
+		}
 		s++;
 	}
 	if (*s == c)
 	{
-		return ((char *)s);
+		return ((char *) s);
 	}
-	return ((char *) NULL);
+	return (NULL);
 }
 
 /*

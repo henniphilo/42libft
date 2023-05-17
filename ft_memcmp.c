@@ -24,7 +24,7 @@ int	ft_memcmp(const void *a1, const void *a2, size_t n)
 	while (i < n)
 	{
 		if (aa1[i] != aa2[i])
-		return (aa1[i] != aa2[i]);
+			return (aa1[i] != aa2[i]);
 		i++;
 	}
 	return (0);

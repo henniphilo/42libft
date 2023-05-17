@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:34:47 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/11 13:47:43 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:10:06 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_countword(char const *s, char c)
 	size_t	count;
 
 	if (!*s)
-		return (NULL);
+		return (0);
 	count = 0;
 	while (*s)
 	{
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	size_t	word_len;
 	int		i;
 
-	newstr = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	newarr = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
 	if (!s || !newarr)
 		return (NULL);
 	i = 0;
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 			if (!ft_strchr(s, c))
 				word_len = ft_strlen(s);
 			else
-				wor_len = ft_strchr(s, c) - s;
+				word_len = ft_strchr(s, c) - s;
 			newarr[i++] = ft_substr(s, 0, word_len);
 			s += word_len;
 		}

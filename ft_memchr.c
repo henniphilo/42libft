@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t size)
 	while (size--)
 	{
 		if (*str == (unsigned char)c)
-			return ((void*)str);
+			return ((void *)str);
 		str++;
 	}
 	return (NULL);

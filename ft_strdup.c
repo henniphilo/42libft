@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:59:40 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/08 15:47:45 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:11:43 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s)
 	int		len;
 
 	i = 0;
-	len = ft_strlen(src);
+	len = ft_strlen(s);
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);

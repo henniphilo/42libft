@@ -6,7 +6,7 @@
 #    By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 15:58:16 by hwiemann          #+#    #+#              #
-#    Updated: 2023/05/11 16:48:03 by hwiemann         ###   ########.fr        #
+#    Updated: 2023/05/17 12:51:17 by hwiemann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,11 @@ ft_strtrim.c \
 ft_substr.c \
 ft_tolower.c \
 ft_toupper.c \
+ft_strmapi.c \
+ft_striteri.c \
+ft_putchar_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c \
 
 OBJ = $(SRC:.c=.o)
 

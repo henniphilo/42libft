@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:00:25 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/08 16:29:16 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:44:17 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
 	size_t	s_len;
-	int		i;
+	size_t	i;
 
 	if (s == NULL)
 	{

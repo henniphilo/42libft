@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:47:16 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/10 12:51:07 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:42:24 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_getstart(const char *s1, const char *set)
 	return (i);
 }
 
-static int	ft_get_end(const char *s1, const char *set)
+static int	ft_getend(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
@@ -54,17 +54,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = ft_getstart(s1, set);
 	end = ft_getend(s1, set);
-	if (s1 == NULL)
-		return (NULL);
-	if (set == NULL)
-		return (s1);
 	if (start >= end)
-		return (NULL);
+		return (ft_strdup(""));
 	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (trim == NULL)
 		return (NULL);
-	ft_strlcpy(trim, s1 + start, end - start + 1);
+	ft_strlcpy(trim, s1 + start, end - start + 2);
 	return (trim);
 }

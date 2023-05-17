@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:51:10 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/10 12:38:22 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:24:05 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	*ft_strcat(char *s1, const char *s2)
 	len = ft_strlen(s1);
 	i = 0;
 	while (s2[i])
-		s1[len++] = ((char *)s2)[i++];
+		s1[len++] = s2[i++];
 	s1[len] = '\0';
 	return (s1);
 }
@@ -62,7 +62,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	else if (s1 != NULL && s2 == NULL)
 		return (ft_strcpy(result, s1));
 	else if (s1 == NULL && s2 != NULL)
-		return (ft_strcpy(res, s2));
+		return (ft_strcpy(result, s2));
 	else
 		return (NULL);
 }

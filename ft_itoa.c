@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 		digits++;
 	}
 	str_number = (char *)malloc(sizeof(char) * (digits + 1));
-		if (!str_number)
+	if (!str_number)
 		return (NULL);
 	*(str_number + digits) = 0;
 	while (digits--)
