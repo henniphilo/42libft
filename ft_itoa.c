@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:50:53 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/16 16:40:55 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:35:26 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,19 @@ static size_t	ft_getdigits(int n)
 {
 	size_t	i;
 
-	i = 1;
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n *= -1;
+		i++;
+	}
 	while (n)
+	{
 		n /= 10;
-	i++;
+		i++;
+	}
 	return (i);
 }
 
@@ -31,22 +40,20 @@ char	*ft_itoa(int n)
 
 	num = n;
 	digits = ft_getdigits(n);
-	if (n < 0)
-	{
-		num *= -1;
-		digits++;
-	}
 	str_number = (char *)malloc(sizeof(char) * (digits + 1));
 	if (!str_number)
 		return (NULL);
-	*(str_number + digits) = 0;
-	while (digits--)
+	if (n < 0)
+	{
+		*(str_number + 0) = '-';
+		num *= -1;
+	}
+	*(str_number + digits) = '\0';
+	while (digits-- > 0)
 	{
 		*(str_number + digits) = num % 10 + '0';
 		num = num / 10;
 	}
-	if (n < 0)
-		*(str_number + 0) = '-';
 	return (str_number);
 }
 /*    *(str_number + digits) = 0; stellt sicher das der string mit null 

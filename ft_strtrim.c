@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:47:16 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/19 17:41:43 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:06:09 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,29 @@ from the beginning and the end of the string */
 
 #include "libft.h"
 
-static int	ft_getstart(const char *s1, const char *set)
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*trimmed;
+	size_t	start;
+	size_t	end;
+
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[start]))
+		start++;
+	while (end > start && ft_strchr(set, s1[end -1]))
+		end--;
+	trimmed = (char *)malloc((end - start + 1) * sizeof(char));
+	if (!trimmed)
+		return (NULL);
+	ft_memmove(trimmed, s1 + start, end - start);
+	trimmed[end - start] = '\0';
+	return (trimmed);
+}
+
+/* static int	ft_getstart(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
@@ -63,6 +85,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (trim == NULL)
 		return (NULL);
-	ft_strlcpy(trim, s1 + start, end - start + 2);
+	ft_s[fail]: your strtrim does not work with basic input
+trlcpy(trim, s1 + start, end - start + 2);
 	return (trim);
-}
+} */
