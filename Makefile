@@ -6,7 +6,7 @@
 #    By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 15:58:16 by hwiemann          #+#    #+#              #
-#    Updated: 2023/05/17 12:51:17 by hwiemann         ###   ########.fr        #
+#    Updated: 2023/05/19 10:46:34 by hwiemann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ ft_toupper.c \
 ft_strmapi.c \
 ft_striteri.c \
 ft_putchar_fd.c \
+ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
 

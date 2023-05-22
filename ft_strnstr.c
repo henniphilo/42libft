@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:57:00 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/08 12:57:04 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/19 16:48:55 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 		{
 			if (needle[j + 1] == '\0')
 			{
-				return ((char *)hay + 1);
+				return ((char *)hay + i);
 			}
 			j++;
 		}

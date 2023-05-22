@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 16:00:25 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/17 11:44:17 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/19 17:09:50 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	s_len = ft_strlen(s);
 	if (start >= s_len)
-		return (NULL);
+		return (ft_strdup(""));
 	if (len > s_len - start)
 		len = s_len - start;
 	substr = (char *)malloc((len + 1) * sizeof(char));
