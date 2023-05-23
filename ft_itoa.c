@@ -6,55 +6,65 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 14:50:53 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/22 15:35:26 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/22 18:43:25 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_getdigits(int n)
+static int	num_len(int n)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	if (n == 0)
-		return (1);
+	len = 1;
 	if (n < 0)
 	{
-		n *= -1;
-		i++;
+		len++;
+		n = -n;
 	}
-	while (n)
+	while (n >= 10)
 	{
-		n /= 10;
-		i++;
+		len++;
+		n = n / 10;
 	}
-	return (i);
+	return (len);
+}
+
+static char	*handle_min_int(void)
+{
+	char	*min_str;
+
+	min_str = ft_strdup("-2147483648");
+	if (!min_str)
+		return (NULL);
+	return (min_str);
 }
 
 char	*ft_itoa(int n)
 {
-	char		*str_number;
-	size_t		digits;
-	long int	num;
+	int		nlen;
+	char	*str;
+	int		sign;
 
-	num = n;
-	digits = ft_getdigits(n);
-	str_number = (char *)malloc(sizeof(char) * (digits + 1));
-	if (!str_number)
+	if (n == INT_MIN)
+		return (handle_min_int());
+	nlen = num_len(n);
+	str = (char *)malloc((nlen + 1) * sizeof(char));
+	if (n == 0)
+		str[0] = '0';
+	if (!str)
 		return (NULL);
+	sign = 1;
 	if (n < 0)
 	{
-		*(str_number + 0) = '-';
-		num *= -1;
+		sign = -1;
+		str[0] = '-';
 	}
-	*(str_number + digits) = '\0';
-	while (digits-- > 0)
+	str[nlen] = '\0';
+	while (n != 0)
 	{
-		*(str_number + digits) = num % 10 + '0';
-		num = num / 10;
+		str[--nlen] = '0' + (n % 10) * sign;
+		n = n / 10;
 	}
-	return (str_number);
+	return (str);
 }
-/*    *(str_number + digits) = 0; stellt sicher das der string mit null 
-terminiert, dann geht er von hinten die einzelnen stellen durch */
