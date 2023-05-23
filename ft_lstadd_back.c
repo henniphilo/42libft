@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 13:18:54 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/23 18:23:48 by hwiemann         ###   ########.fr       */
+/*   Created: 2023/05/23 15:26:15 by hwiemann          #+#    #+#             */
+/*   Updated: 2023/05/23 18:24:59 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Returns the last node of the list. lst: beginning of list*/
-
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list	*pos;
+
+	pos = ft_lstlast(*lst);
+	if (!pos)
+		*lst = new;
+	else
+		pos->next = new;
 }

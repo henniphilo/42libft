@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 11:05:49 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/23 11:20:49 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:21:35 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
+	new_node = malloc(sizeof(t_list));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->content = content;

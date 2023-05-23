@@ -6,7 +6,7 @@
 #    By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 15:58:16 by hwiemann          #+#    #+#              #
-#    Updated: 2023/05/19 10:46:34 by hwiemann         ###   ########.fr        #
+#    Updated: 2023/05/23 17:12:36 by hwiemann         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,11 @@ BONUSFILES = ft_lstnew.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c \
 
 OBJ = $(SRC:%.c=%.o)
 BONUSOBJS := $(BONUSFILES:%.c=%.o)

@@ -6,7 +6,7 @@
 /*   By: hwiemann <hwiemann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:32:39 by hwiemann          #+#    #+#             */
-/*   Updated: 2023/05/23 13:32:37 by hwiemann         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:18:35 by hwiemann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
 
@@ -68,6 +67,11 @@ void	ft_putnbr_fd(int n, int fd);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif
