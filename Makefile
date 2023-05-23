@@ -13,11 +13,11 @@
 
 NAME = libft.a
 
-CC = cc
-
 AR = ar rc
 
 RM = rm
+
+CC = cc
 
 FLAG = -Werror -Wextra -Wall
 
@@ -56,9 +56,15 @@ ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
 
-OBJ = $(SRC:.c=.o)
+BONUSFILES = ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
 
-all: $(NAME)
+OBJ = $(SRC:%.c=%.o)
+BONUSOBJS := $(BONUSFILES:%.c=%.o)
+
+all: $(NAME) bonus
 
 HEADER := libft.h
 
@@ -66,10 +72,12 @@ $(NAME):$(OBJ)
 	$(AR) $(NAME) $(OBJ)
 %.o: %.c
 	$(CC) $(FLAG) -c $< -o $@
+bonus: $(BONUSOBJS) $(HEADER) 
+	$(AR) $(NAME) $(BONUSOBJS)
 fclean:clean
 	$(RM) -f $(NAME)
 clean:
 	$(RM) $(OBJ)	
 re: fclean all
 
-.PHONY: all fclean clean re
+.PHONY: all bonus bonusclean fclean clean re
