@@ -15,7 +15,7 @@ NAME = libft.a
 
 AR = ar rc
 
-RM = rm
+RM = rm -f
 
 CC = cc
 
@@ -79,10 +79,11 @@ $(NAME):$(OBJ)
 	$(CC) $(FLAG) -c $< -o $@
 bonus: $(BONUSOBJS) $(HEADER) 
 	$(AR) $(NAME) $(BONUSOBJS)
-fclean:clean
-	$(RM) -f $(NAME)
 clean:
-	$(RM) $(OBJ)	
+	$(RM) $(OBJ) 
+	$(RM) $(BONUSOBJS)
+fclean:clean
+	$(RM) $(NAME)
 re: fclean all
 
 .PHONY: all bonus bonusclean fclean clean re
